@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login form</title>
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; 
+      align-items: flex-start;
+      padding-left: 70px;
+      padding-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-image: url('img/login background.png');
+        justify-content: center; 
+        align-items: center;     
+        padding-left: 0; 
+        padding-top: 0;
+      }
+      
+      h2 {
+        color: white !important;
+        background: none !important;
+        -webkit-text-fill-color: white !important;
+        text-align: center;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      body {
+        background-image: url('img/dailydev_where_developers_suffer_together_sfvfog.png');
+      }
+    }
+
+    header {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: transparent;
+      max-width: 480px;
+      margin-bottom: 30px;
+      font-size: 33px;
+      background: linear-gradient(#fa5293, #d642e3);
+      background-clip: text;
+      -webkit-background-clip: text;
+      line-height: 1.2;
+    }
+
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: inherit; 
+    }
+
+    h3 {
+      position: relative;
+      color: black;
+      height: 50px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      background: white;
+      display: flex;
+      align-items: center;
+      width: 350px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+    }
+   
+    h3:hover {
+      background: #f9f9f9;
+    }
+
+    .icon8-img {
+      width: 24px;
+      height: 24px;
+      margin-left: 20px;
+      margin-right: 15px;
+    }
+
+    .divider {
+      font-size: 18px;
+      width: 350px;
+      color: #999;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #444;
+    }
+
+    .last-section {
+      justify-content: center;
+      color: white !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Custom Clickable Alert Style */
+    #customAlert {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      z-index: 1000;
+      text-align: center;
+      width: 320px;
+    }
+
+    #customAlert p {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    #customAlert a {
+      color: #d642e3;
+      text-decoration: underline;
+      font-weight: bold;
+      display: block;
+      margin: 15px 0;
+    }
+
+    #customAlert button {
+      background: linear-gradient(#fa5293, #d642e3);
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+
+    @media (max-width: 550px) {
+      h2 { font-size: 26px; width: 90%; }
+      h3, .divider { width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <div id="customAlert">
+    <p>Please use <strong>Desktop Mode</strong> for the best experience.</p>
+    <hr style="margin: 10px 0; opacity: 0.2;">
+    <p>Visit my GitHub:</p>
+    <a href="https://github.com/abdurrabbysujon" target="_blank">github.com/abdurrabbysujon</a>
+    <button onclick="closeAlert()">Got it!</button>
+  </div>
+
+  <header>
+    <img src="https://cdn.prod.website-files.com/5e0a5d9d743608d0f3ea6753/5f1d8b1b9c7814aae6b69044_Daily%20Full%20logo.svg" alt="Daily Dev Logo">
+  </header>
+
+  <h2>Where developers suffer together</h2>
+
+  <div class="login-container">
+    <h3>
+      <img class="icon8-img" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
+      <span>Continue with Google</span>
+    </h3>
+
+    <h3 onclick="window.open('https://github.com/abdurrabbysujon', '_blank')">
+      <img class="icon8-img" src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="github-logo"/>
+      <span>Continue with GitHub</span>
+    </h3>
+
+    <div class="divider">or</div>
+
+    <h3 class="last-section">Continue with email</h3>
+  </div>
+
+  <script>
+    window.onload = function() {
+      document.getElementById('customAlert').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    };
+
+    function closeAlert() {
+      document.getElementById('customAlert').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
